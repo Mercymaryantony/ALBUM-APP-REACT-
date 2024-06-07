@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from './Navbar'
 
-export const Searcg = () => {
+const Delete = () => {
   return (
     <div>
         <Navbar/>
-        <div className="container">
+         <div className="container">
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <div className="row g-3">
@@ -14,7 +14,7 @@ export const Searcg = () => {
                             <input type="text" className="form-control" />
                         </div>
                         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col xl-12 col-xxl-12">
-                            <button className="btn btn-success">SEARCH</button>
+                            <button className="btn btn-danger">DELETE</button>
                         </div>
                     </div>
                 </div>
@@ -23,3 +23,5 @@ export const Searcg = () => {
     </div>
   )
 }
+
+export default Delete
