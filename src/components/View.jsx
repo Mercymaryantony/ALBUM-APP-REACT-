@@ -506,36 +506,40 @@ const View = () => {
             }
         ]
     )
-
   return (
     <div>
         <Navbar/>
-        <div className="container">
-            <div className="row">
-                <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <div className="row g-3">
-                    {data.map(
-                        (value,i) =>
-                            {
-                                return  <div className="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
-                                <div className="card" >
-                                    <img src="https://media.tacdn.com/media/attractions-content--1x-1/10/59/6b/07.jpg"></img>
-                                        <div className="card-body">
-                                            <h5 className="card-title">{value.userId}</h5>
-                                            <p className="card-text">{value.id}</p>
-                                            <a href="#" class="btn btn-primary">{value.title}</a>
-                                        </div>
-                                </div>
-                            </div>
-                            }
-                    )
+            <div className="container">
+                <div className="row">
+                    <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">USER ID</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">TITLE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {data.map(
+                                    (value,i) =>
+                                        {
+                                            return <tr>
+                                            <th scope="row">{value.uesrId}</th>
+                                            <td>{value.id}</td>
+                                            <td>{value.title}</td>
+                                            
+                                        </tr>
+                                        }
+                                )
 
-                    }
+                                }
+                           
+                            </tbody>
+                        </table>
                     </div>
-
                 </div>
             </div>
-        </div>
     </div>
   )
 }

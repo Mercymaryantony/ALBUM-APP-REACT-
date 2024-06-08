@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Add from './components/Add';
-import { Searcg } from './components/Searcg';
 import Delete from './components/Delete';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import View from './components/View';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
      <BrowserRouter>
      <Routes>
       <Route path='/' element={<Add/>}/>
-      <Route path='/s' element={<Searcg/>}/>
+      <Route path='/s' element={<Search/>}/>
       <Route path='/d' element={<Delete/>}/>
       <Route path='/v' element={<View/>}/>
      </Routes>
