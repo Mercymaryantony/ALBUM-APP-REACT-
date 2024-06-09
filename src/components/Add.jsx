@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 
 const Add = () => {
+    const [data,setData]=useState(
+        {
+            "name":"",
+            "title":"",
+            "img":"",
+            "desc":""
+        }
+    )
+   const inputhandler = (event)=>{
+    setData({...data,[event.target.name]:event.target.value})
+   }
+   const readValue = ()=>{
+    console.log(data)
+   }
   return (
     <div>
         <Navbar/>
@@ -11,22 +25,22 @@ const Add = () => {
                 <div className="row g-3">
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                             <label htmlFor="" className="form-label">NAME</label>
-                            <input type="text" className="form-control" />
+                            <input type="text" className="form-control" name='name' value={data.name} onChange={inputhandler} />
                         </div>
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                             <label htmlFor="" className="form-label">TITLE</label>
-                            <input type="text" className="form-control" />
+                            <input type="text" className="form-control" name='title' value={data.title} onChange={inputhandler}/>
                         </div>
                         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <label htmlFor="" className="form-label">IMAGE</label>
-                            <input type="file" name="" id="" className="form-control" />
+                            <input type="file" name="img" value={data.img} onChange={inputhandler} id="" className="form-control" />
                         </div>
                         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <label htmlFor="" className="form-label">DESCRIPTION</label>
-                            <textarea name="" id="" className="form-control"></textarea>
+                            <textarea name="desc" value={data.desc} onChange={inputhandler} id="" className="form-control"></textarea>
                         </div>
                         <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                            <button className="btn btn-primary">ADD</button>
+                            <button className="btn btn-primary" onClick={readValue}>ADD</button>
                         </div>
                     </div>
                 </div>
